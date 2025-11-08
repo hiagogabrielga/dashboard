@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 import styles from "./lateralBar.module.css";
 import { useState, useEffect, useMemo } from "react";
 import { getParametros } from "@/lib/api";
-
+import Link from "next/link";
 export function Sidebar({
   userName = {},
   filtros = {},
@@ -128,12 +128,12 @@ export function Sidebar({
       aria-hidden={!showbar}
     >
       <div className={styles.userCard}>
-        <span className={styles.userNames}>{userName}</span>
+        <span className={styles.userNames}>Usuário</span>
       </div>
 
-      <button className={styles.logout} onClick={handleLogout} type="button">
+      <Link className={styles.logout} href={'/'}>
         Logout
-      </button>
+      </Link>
 
       <hr className={styles.divider} />
 
