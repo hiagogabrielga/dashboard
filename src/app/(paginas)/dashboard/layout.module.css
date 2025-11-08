@@ -1,0 +1,23 @@
+.botaoBar{
+    background-color: rgba(0, 0, 0, 0.555);
+    color: white;
+    position: absolute;
+    padding: 15px;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    border: none;
+    position: fixed;
+    margin-top: calc(30vh - 20px);
+    transition: all 0.2s;
+    cursor: pointer;
+    z-index: 6000;
+}
+
+.espacamento{
+    height: 140px;
+}

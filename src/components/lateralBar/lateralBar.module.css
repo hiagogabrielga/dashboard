@@ -1,0 +1,226 @@
+/* Container da sidebar fixa ocupando a altura toda */
+.kpiCardEstudante {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100px;
+  border-radius: 16px;
+  background-color: #b3f19ac2;
+  color: #0c7a56;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.25s ease, filter 0.2s ease;
+}
+
+.kpiCardEstudante .kpiLabel{
+  color: rgb(17, 17, 17);
+}
+
+.kpiCardEstudante .kpiValue{
+  color: rgb(17, 17, 17);
+  background-color: #ffffffd2;
+  width: 90%;
+  height: 50%;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 50px;
+  border-radius: 10px;
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+
+  height: 100vh;           /* altura fixa para permitir rolagem interna */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background: #fff;
+  border-right: 1px solid #9e9e9e;
+  padding: 16px 16px 24px;
+  transition: all 0.2s;
+  z-index: 1200000;
+}
+
+/* Área rolável (lista de filtros) */
+.filters {
+  flex: 1;                 /* ocupa o espaço restante */
+  min-height: 0;           /* importante em flexbox! permite encolher e rolar */
+  overflow-y: auto;        /* mostra a barra quando precisar */
+  /* padding: 16px 16px 24px;  Se já existe padding na .sidebar, pode reduzir aqui */
+  background: #fff;
+}
+
+/* Cabeçalho com nome */
+.userCard{
+  display: grid;
+  place-items: center;
+  margin-top: 60px;
+}
+.userNames{
+  display: flex;
+  background: var(--green-1);
+  color: #163a2c;
+  font-weight: 800;
+  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+  background-color: #b3f19ac2;
+  height: 60px;
+  justify-content: center;
+  width: 220px;
+  align-items: center;
+}
+
+/* Logout */
+.logout{
+  align-self: flex-start;
+  margin-top: 8px;
+  background: #fff;
+  color: #111;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+  border: 1px solid rgb(194, 194, 194);
+  height: 40px;
+  margin-left: 4px;
+}
+.logout:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.5);
+  color: #08b376;
+}
+
+/* Divisor */
+.divider{
+  margin: 14px 4px 23px 1px;
+  height: 1px;
+  border: 0;
+  background: rgb(170, 170, 170);
+}
+
+/* Títulos */
+.sectionTitle{
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 2px 4px 10px;
+}
+.subTitle{
+  font-size: 15px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 16px 4px 8px;
+}
+
+/* Label */
+.label{
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #404040;
+  margin: 10px 4px 6px;
+}
+
+/* Select estilizado com chevron */
+.selectWrap{
+  position: relative;
+}
+.select{
+  width: 100%;
+  height: 40px;
+  padding: 0 38px 0 14px;
+  border-radius: 10px;
+  background: rgb(228, 228, 228);
+  appearance: none;
+  font-size: 14px;
+  color: #151515;
+  cursor: pointer;
+}
+
+/* Chevron (setinha) via SVG inline */
+.selectWrap::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5' stroke='%23111111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+  opacity: .8;
+}
+
+/* Checkbox personalizado */
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 20px;
+  height: 20px;
+  border: 2px solid #1aa774;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Efeito hover */
+.checkbox:hover {
+  box-shadow: 0 0 5px rgba(26, 167, 116, 0.5);
+}
+
+/* Quando marcado */
+.checkbox:checked {
+  background-color: #1aa774;
+  border-color: #1aa774;
+}
+
+/* Check centralizado e ajustado */
+.checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 12px;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
+  transform: translate(-50%, -60%) rotate(45deg);
+}
+
+/* Foco acessível */
+.checkbox:focus-visible {
+  outline: 2px solid #00ff99;
+  outline-offset: 2px;
+}
+
+.sidebar[style*="width: 0"] {
+  overflow: hidden;         /* nada visível fora da borda */
+  opacity: 0;               /* visualmente invisível */
+  pointer-events: none;     /* impede clique/interação */
+}
+
+.sidebar[style*="width: 0"] * {
+  visibility: hidden;       /* esconde todo o conteúdo */
+}
